@@ -1,25 +1,25 @@
-# Simple API Java
+# Simple API Java.
 
 Aplicação API 
 
-## Pré-requisitos
+## Pré-requisitos.
 
 - Java 21
 - Git
 - Docker
 
-## Build e execução
+## Build e execução.
 
 ```sh
 docker compose up --build
 ```
 
-## Testes unitários (validação)
+## Testes unitários (validação).
 
 ./mvnw test
 
 
-## Documentação online (OpenAPI)
+## Documentação online (OpenAPI).
 
 http://localhost:8080/swagger-ui/index.html
 
