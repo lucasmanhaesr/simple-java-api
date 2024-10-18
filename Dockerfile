@@ -1,4 +1,4 @@
-#Instalando o Maven para a JDK 21
+#Baixando imagem base do Maven para compilar o projeto Java e empacotá-lo em um arquivo JAR
 FROM maven:3.9.8-eclipse-temurin-21 AS build
 #Criando pasta em /opt
 RUN mkdir /opt/app
@@ -12,7 +12,7 @@ RUN mvn clean package
 FROM eclipse-temurin:21-jre-alpine
 #Criando pasta em /opt
 RUN mkdir /opt/app
-#Copiando o app.jar que foi gerado anteriormente em build para a pasta app e arquivo app.jar na nova imagem baixada
+#Baiando imagem base do JRE Alpine para manter a imagem final leve. O arquivo JAR é copiado para a nova imagem
 COPY --from=build  /opt/app/target/app.jar /opt/app/app.jar
 #Mudando o diretório padrão do container para a pasta criada
 WORKDIR /opt/app
